@@ -1,12 +1,10 @@
 <template>
   <div id="app">
-    <header-nav :routerLink = 'routerLink'></header-nav>
-    <router-view/>
+    <router-view :routerLink = 'routerLink'/>
   </div>
 </template>
 
 <script>
-import headerNav from '@/components/headerNav'
 export default {
   data(){
     return{
@@ -23,9 +21,6 @@ export default {
     }
   },
   name: 'App',
-  components:{
-    'header-nav':headerNav,
-  }
 }
 </script>
 
@@ -37,4 +32,5 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
 </style>

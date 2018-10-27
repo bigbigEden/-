@@ -1,76 +1,53 @@
 <template>
 	<div class='con'>
+		<header-nav :routerLink = 'routerLink'></header-nav>
 		<main class='main'>
-			<div class='content_box'>
+			<div class='content_box' v-for= '(item,index) in pageList'>
 				<div class='content_main'>
-					<header class='main_title'>
-						<h1 class='title'>js学习</h1>
+					<header class="main_title">
+						<h1 class='title'>
+							{{item.title}}
+						</h1>
 						<div class='time_Box'>
-							<span class='time'>2018-08-30 17：04 </span>
+							<span class='time'>{{item.time}}</span>
 							<span class='time'>伊甸园</span>
-							<span class='type'>js基础</span>
+							<span class='type'>{{item.type}}</span>
 						</div>
 					</header>
 					<div class='main_introduction'>
-						这个 文章是我好久好久之前写的 现在放上来 测试测试测试测试
+						{{item.introduct}}
 					</div>
-					<div class='show_all'>
+					<router-link class='show_all' tag='div' :to="{path:'/test',query:{id:item.id}}">
 						阅读全文
-					</div>
+					</router-link>
+
 					<footer class='main_footer'>
 						
 					</footer>
 				</div>
-			</div> <!-- 内容例子 -->
-			<div class='content_box'>
-				<div class='content_main'>
-					<header class='main_title'>
-						<h1 class='title'>js学习</h1>
-						<div class='time_Box'>
-							<span class='time'>2018-08-30 17：04 </span>
-							<span class='time'>伊甸园</span>
-							<span class='type'>js基础</span>
-						</div>
-					</header>
-					<div class='main_introduction'>
-						这个 文章是我好久好久之前写的 现在放上来 测试测试测试测试
-					</div>
-					<div class='show_all'>
-						阅读全文
-					</div>
-					<footer class='main_footer'>
-						
-					</footer>
-				</div>
-			</div> <!-- 内容例子 -->
-			<div class='content_box'>
-				<div class='content_main'>
-					<header class='main_title'>
-						<h1 class='title'>js学习</h1>
-						<div class='time_Box'>
-							<span class='time'>2018-08-30 17：04 </span>
-							<span class='time'>伊甸园</span>
-							<span class='type'>js基础</span>
-						</div>
-					</header>
-					<div class='main_introduction'>
-						这个 文章是我好久好久之前写的 现在放上来 测试测试测试测试
-					</div>
-					<div class='show_all'>
-						阅读全文
-					</div>
-					<footer class='main_footer'>
-						
-					</footer>
-				</div>
-			</div> <!-- 内容例子 -->
+			</div>
 		</main>
 	</div>
 </template>
 
 <script type="text/javascript">
+import headerNav from '@/components/headerNav'
 export default {
-
+	data(){
+		return{
+			pageList:'',
+		}
+	},
+	created(){
+		this.$axios.get('/api/getPage')
+		.then((res)=>{
+			this.pageList = res.data.reverse();
+		})	
+	},
+ 	props:['routerLink'],
+	components:{
+		'header-nav':headerNav,
+  	}
 }
 </script>
 

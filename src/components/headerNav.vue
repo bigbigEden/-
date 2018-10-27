@@ -65,6 +65,7 @@
 		width:100%;
 		position:fixed;
 		z-index:10;
+		background-color:rgba(0,0,0,0.3);
 		.myNav{
 			width:100%;
 			min-width:1280px;
