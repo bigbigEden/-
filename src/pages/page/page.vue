@@ -14,7 +14,7 @@ import headerNav from '@/components/headerNav'
 			}
 		},
 		created(){
-			this.$axios.get('/api/test?id=' + this.$route.query.id)
+			this.$axios.get('/api/page?id=' + this.$route.query.id)
 			.then((res)=>{
 				$('.mainBox').append(res.data);
 			})	

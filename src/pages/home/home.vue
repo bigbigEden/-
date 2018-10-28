@@ -17,7 +17,7 @@
 					<div class='main_introduction'>
 						{{item.introduct}}
 					</div>
-					<router-link class='show_all' tag='div' :to="{path:'/test',query:{id:item.id}}">
+					<router-link class='show_all' tag='div' :to="{path:'/page',query:{id:item.id}}">
 						阅读全文
 					</router-link>
 
