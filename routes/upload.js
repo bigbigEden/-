@@ -56,8 +56,9 @@ router.post('/',function(req,res,next){
 	 })
 	.then(([fileds,files])=>{
 		var time  = getTime(new Date());
+
 		var uploadPath = files.content[0].path;
-		var changePath = './public/upload/' + files.content[0].originalFilename;
+		var changePath = './public/upload/' +id+'-'+ files.content[0].originalFilename;
 		var message = {
 			title:fileds.title[0],	
 			introduct:fileds.introduct[0],

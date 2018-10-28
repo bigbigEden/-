@@ -23,8 +23,14 @@ function fs_readdir(path){
 router.get('/', function(req, res, next) {
 	fs_readdir('./public/upload')
 	.then((r)=>{
-		r = r.reverse();
-		var filename = r[req.query.id - 1];
+		var re = new RegExp('[' + req.query.id + ']');
+		console.log(re);
+		for(var i = 0;i<r.length;i++){
+			if(re.test(r[i])){
+				filename = r[i];
+				console.log(filename);
+			}
+		}
 		return fs_readFile('./public/upload/' + filename);
 	})
 	.then((r)=>{
