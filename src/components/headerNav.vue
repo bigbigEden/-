@@ -24,11 +24,11 @@
 
 <style lang='less' scoped>
 	.bg{
-		height:640px;
+		height:420px;
 		width:100%;
 		position:relative;
 		background-size:cover;
-		background-position:center 70%;
+		background-position:center 82%;
 		background-repeat: no-repeat;
 		background-image:url('../../static/img/bg3.jpg');
 		.caption{

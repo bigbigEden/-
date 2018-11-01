@@ -1,6 +1,7 @@
 <template>
 	<div class='con'>
 		<header-nav :routerLink = 'routerLink'></header-nav>
+		<live2d></live2d>
 		<main class='main'>
 			<div class='content_box' v-for= '(item,index) in pageList'>
 				<div class='content_main'>
@@ -32,6 +33,7 @@
 
 <script type="text/javascript">
 import headerNav from '@/components/headerNav'
+import live2d from '@/components/live2d'	
 export default {
 	data(){
 		return{
@@ -47,6 +49,7 @@ export default {
  	props:['routerLink'],
 	components:{
 		'header-nav':headerNav,
+		'live2d':live2d,
   	}
 }
 </script>

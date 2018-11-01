@@ -4,6 +4,7 @@ import home from '@/pages/home/home'
 import upload from '@/pages/upload/upload'//后台上传
 import page from '@/pages/page/page'     //详情页
 import about from '@/pages/about/about' //关于我
+import test from '@/pages/test' 
 // import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
@@ -22,13 +23,18 @@ export default new Router({
     },
     {
       path:'/page',
-      name:'test',
+      name:'page',
       component:page
     },
     {
       path:'/aboutMe',
       name:'about',
       component:about
+    },
+    {
+      path:'/test',
+      name:'test',
+      component:test,
     }
   ]
 })
