@@ -65,14 +65,14 @@ import headerNav from '@/components/headerNav'
 	background:rgba(0,0,0,0.1);
 }
 	.introductBox{
-		width:1200px;
+		width:1100px;
 		margin:0 auto;
 		padding-top:50px;
 		display:flex;
 		justify-content:space-between;
 		.myIntroduct{
 			position:relative;
-			width:875px;
+			width:775px;
 			height:300px;
 			padding:25px;	
 			background:white;

@@ -1,6 +1,9 @@
 <template>
 	<div class='con'>
 		<button @click = "send('/api/test')"></button>
+		<h3>测试{{isSelect ?'是' :'不是'}}</h3>
+		<button class='test' @click = 'commits'></button>
+		<button class = 'test' @click = 'cancel'></button>
 	</div>
 </template>
 
@@ -8,7 +11,7 @@
 	export default {
 		data(){
 			return{
-
+				isSelect:false,
 			}
 		},
 		methods:{
@@ -43,12 +46,31 @@
 				}
 				var it = getJson(url);
 				it.next();
+			},
+			commits(){
+				this.$store.dispatch('check_select',true)
+				.then((res)=>{
+					
+					this.isSelect = this.$store.state.is_select;
+				})
+			},
+			cancel(){
+				this.$store.dispatch('check_select',false)
+				.then((res)=>{
+					this.isSelect = this.$store.state.is_select;
+				})
 			}
 		}
 	}
 </script>
 
 <style lang='less' scoped>
+	.test{
+		width:200px;
+		height:30px;
+		border:1px solid black;
+		display:inline-block;
+	}
 	button{
 		display:block;
 		width:50px;

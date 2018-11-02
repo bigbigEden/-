@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <router-view :routerLink = 'routerLink'/>
+    <live2d></live2d>
   </div>
 </template>
 
 <script>
+import store from '@/store/index'
+import live2d from '@/components/live2d'  
 export default {
   data(){
     return{
@@ -19,6 +22,10 @@ export default {
         name:'关于我',
       }]    
     }
+  },
+  store,
+  components:{
+    'live2d':live2d,
   },
   name: 'App',
 }
