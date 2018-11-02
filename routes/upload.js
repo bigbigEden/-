@@ -42,34 +42,32 @@ function form_parse(req){
 	})
 	return defer.promise
 }
-
+function upload(fileds,files,id){
+	var time  = getTime(new Date());
+	var uploadPath = files.content[0].path;
+	var changePath = './public/upload/' +id+'-'+ files.content[0].originalFilename;
+	var message = {
+		title:fileds.title[0],	
+		introduct:fileds.introduct[0],
+		type:fileds.type[0],
+		id:id,
+		time:time,
+	}
+	var myPage = new page(message);
+	return Promise.all[myPage.save(),fs_rename(uploadPath,changePath)]
+}
+async function run(req){
+	var mydir = await fs_readdir('./public/upload'); //获取文件目录
+	var id = mydir.length + 1;
+	var [fileds,files] = await form_parse(req); //将上传请求转换
+	return upload(fileds,files,id);   //保存到数据库并且重命名
+}
 router.get('/', function(req, res, next) {
   	res.send('respond with a resource'); 
 });
 
 router.post('/',function(req,res,next){
-	var id = '';
-	fs_readdir('./public/upload')
-	.then((r)=>{
-	 	id = r.length + 1; //这里应该先检查是否有重复名字的文件在加1 或者在rename后加上时间来避免
-	 	return form_parse(req)
-	 })
-	.then(([fileds,files])=>{
-		var time  = getTime(new Date());
-
-		var uploadPath = files.content[0].path;
-		var changePath = './public/upload/' +id+'-'+ files.content[0].originalFilename;
-		var message = {
-			title:fileds.title[0],	
-			introduct:fileds.introduct[0],
-			type:fileds.type[0],
-			id:id,
-			time:time,
-		}
-
-		var myPage = new page(message);
-		return Promise.all[myPage.save(),fs_rename(uploadPath,changePath)]
-	})
+	run(req)
 	.then(()=>{
 		console.log('保存成功');
 		res.send('success');

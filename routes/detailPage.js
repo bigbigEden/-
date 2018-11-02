@@ -20,22 +20,25 @@ function fs_readdir(path){
 	})
 	return defer.promise
 }
-router.get('/', function(req, res, next) {
-	fs_readdir('./public/upload')
-	.then((r)=>{
-		var re = new RegExp('[' + req.query.id + ']');
-		console.log(re);
-		for(var i = 0;i<r.length;i++){
-			if(re.test(r[i])){
-				filename = r[i];
-				console.log(filename);
-			}
+async function read(url,req){
+	var filename = ''; //读取文件名;
+	var dir = await fs_readdir(url); //获取文件目录
+	var re = new RegExp('[' + req.query.id + ']');
+	for(var i = 0;i<dir.length;i++){
+		if(re.test(dir[i])){
+			filename = dir[i];
 		}
-		return fs_readFile('./public/upload/' + filename);
-	})
+	}
+	return fs_readFile(url +'/'+ filename); //读取具体文件
+}
+router.get('/', function(req, res, next) {
+	read('./public/upload',req)
 	.then((r)=>{
 		var htmlStr = marked(r.toString());
 		res.json(htmlStr);
+	})
+	.catch((err)=>{
+		console.log(err);
 	})
 });
 
