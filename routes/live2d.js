@@ -4,7 +4,7 @@ var path = require('path')
 var fs = require('fs');
 /* GET home page. */
 router.get('/',function(req, res, next){
-	var file = path.join(__dirname,'../public/static/model.json');
+	var file = path.join(__dirname,'../public/static/live2d/model.json');
 	fs.readFile(file,'utf-8',function(err,data){
 		if(err){
 			return err

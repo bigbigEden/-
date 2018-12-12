@@ -1,0 +1,89 @@
+{
+    "version":"1.0.0",
+    "model":"live2d/model.moc",
+    "textures":[
+        "live2d/textures/default-costume.png",
+        "live2d/textures/pajamas-costume.png",
+        "live2d/textures/school-costume.png"
+    ],
+    "layout":{
+        "center_x":0.0,
+        "center_y":-0.05,
+        "width":2.0
+    },
+    "hit_areas_custom":{
+        "head_x":[-0.35, 0.6],
+        "head_y":[0.19, -0.2],
+        "body_x":[-0.3, -0.25],
+        "body_y":[0.3, -0.9]
+    },
+    "motions":{
+        "idle":[
+            {"file":"live2d/motions/WakeUp.mtn"},
+            {"file":"live2d/motions/Breath1.mtn"},
+            {"file":"live2d/motions/Breath2.mtn"},
+            {"file":"live2d/motions/Breath3.mtn"},
+            {"file":"live2d/motions/Breath5.mtn"},
+            {"file":"live2d/motions/Breath7.mtn"},
+            {"file":"live2d/motions/Breath8.mtn"}
+        ],
+        "tap_body":[
+            {"file":"live2d/motions/Breath1.mtn"},
+            {"file":"live2d/motions/Breath2.mtn"},
+            {"file":"live2d/motions/Breath3.mtn"},
+            {"file":"live2d/motions/Breath4.mtn"},
+            {"file":"live2d/motions/Breath5.mtn"},
+            {"file":"live2d/motions/Breath6.mtn"},
+            {"file":"live2d/motions/Breath7.mtn"},
+            {"file":"live2d/motions/Breath8.mtn"},
+            {"file":"live2d/motions/Fail.mtn"},
+            {"file":"live2d/motions/Sleeping.mtn"},
+            {"file":"live2d/motions/Success.mtn"},
+            {"file":"live2d/motions/Sukebei1.mtn"},
+            {"file":"live2d/motions/Sukebei2.mtn"},
+            {"file":"live2d/motions/Sukebei3.mtn"},
+            {"file":"live2d/motions/Touch Dere1.mtn"},
+            {"file":"live2d/motions/Touch Dere2.mtn"},
+            {"file":"live2d/motions/Touch Dere3.mtn"},
+            {"file":"live2d/motions/Touch Dere4.mtn"},
+            {"file":"live2d/motions/Touch Dere5.mtn"},
+            {"file":"live2d/motions/Touch Dere6.mtn"},
+            {"file":"live2d/motions/Touch1.mtn"},
+            {"file":"live2d/motions/Touch2.mtn"},
+            {"file":"live2d/motions/Touch3.mtn"},
+            {"file":"live2d/motions/Touch4.mtn"},
+            {"file":"live2d/motions/Touch5.mtn"},
+            {"file":"live2d/motions/Touch6.mtn"},
+            {"file":"live2d/motions/WakeUp.mtn"}
+        ],
+        "flick_head":[
+            {"file":"live2d/motions/Breath1.mtn"},
+            {"file":"live2d/motions/Breath2.mtn"},
+            {"file":"live2d/motions/Breath3.mtn"},
+            {"file":"live2d/motions/Breath4.mtn"},
+            {"file":"live2d/motions/Breath5.mtn"},
+            {"file":"live2d/motions/Breath6.mtn"},
+            {"file":"live2d/motions/Breath7.mtn"},
+            {"file":"live2d/motions/Breath8.mtn"},
+            {"file":"live2d/motions/Fail.mtn"},
+            {"file":"live2d/motions/Sleeping.mtn"},
+            {"file":"live2d/motions/Success.mtn"},
+            {"file":"live2d/motions/Sukebei1.mtn"},
+            {"file":"live2d/motions/Sukebei2.mtn"},
+            {"file":"live2d/motions/Sukebei3.mtn"},
+            {"file":"live2d/motions/Touch Dere1.mtn"},
+            {"file":"live2d/motions/Touch Dere2.mtn"},
+            {"file":"live2d/motions/Touch Dere3.mtn"},
+            {"file":"live2d/motions/Touch Dere4.mtn"},
+            {"file":"live2d/motions/Touch Dere5.mtn"},
+            {"file":"live2d/motions/Touch Dere6.mtn"},
+            {"file":"live2d/motions/Touch1.mtn"},
+            {"file":"live2d/motions/Touch2.mtn"},
+            {"file":"live2d/motions/Touch3.mtn"},
+            {"file":"live2d/motions/Touch4.mtn"},
+            {"file":"live2d/motions/Touch5.mtn"},
+            {"file":"live2d/motions/Touch6.mtn"},
+            {"file":"live2d/motions/WakeUp.mtn"}
+        ]
+    }
+}
