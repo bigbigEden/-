@@ -21,14 +21,30 @@ page.prototype = {
 			})
 		return defer.promise
 	},
-	getPage:function(){
+	getPage:function(type){
 		var defer = Q.defer();
-		var sql = 'SELECT * from page';
+		if(type !=undefined){
+			sql = 'SELECT * from page where type=' +'"' + type + '"'
+		}
+		else {
+			sql = 'SELECT * from page';
+		}
 		pool.query(sql,function(err,results,fileds){
 			if(err){
 				return defer.reject(err)
 			}
 			else defer.resolve([results,fileds])
+		})
+		return defer.promise;
+	},
+	getType:function(){
+		var defer = Q.defer();
+		var sql = 'SELECT TYPE from page';
+		pool.query(sql,function(err,results,fileds){
+			if(err){
+				return defer.reject(err)
+			}
+			else defer.resolve(results)
 		})
 		return defer.promise;
 	}

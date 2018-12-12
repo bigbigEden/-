@@ -20,7 +20,9 @@ function fs_readdir(path){
 	})
 	return defer.promise
 }
+
 async function read(url,req){
+
 	var filename = ''; //读取文件名;
 	var dir = await fs_readdir(url); //获取文件目录
 	var re = new RegExp('[' + req.query.id + ']');
