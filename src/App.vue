@@ -7,7 +7,7 @@
 
 <script>
 import store from '@/store/index'
-import live2d from '@/components/live2d'  
+import live2d from '@/views/common/live2d'  
 export default {
   data(){
     return{

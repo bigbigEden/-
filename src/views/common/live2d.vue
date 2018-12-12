@@ -7,7 +7,7 @@
 </template>
 
 <script type="text/javascript">
-import '../../static/js/live2d.js'  //引入live2djs
+import '../../../static/js/live2d.js'  //引入live2djs
 export default {
 	data(){
 		return{

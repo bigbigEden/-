@@ -27,11 +27,12 @@
 						url:'/api/upload',
 						type:'POST',
 						data:formData,
+						dataType:'text',
 						processData: false,  // 告诉jQuery不要去处理发送的数据
 					  	contentType: false,  // 告诉jQuery不要去设置Content-Type请求头
 						success:function(data){
-							alert(data);
-						}
+							alert('success');
+						},
 					})
 				}
 			}

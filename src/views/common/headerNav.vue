@@ -30,7 +30,7 @@
 		background-size:cover;
 		background-position:center 82%;
 		background-repeat: no-repeat;
-		background-image:url('../../static/img/bg3.jpg');
+		background-image:url('../../../static/img/bg3.jpg');
 		.caption{
 			width:100px;
 			height:100px;
@@ -67,9 +67,8 @@
 		z-index:10;
 		background-color:rgba(0,0,0,0.3);
 		.myNav{
-			width:100%;
-			min-width:1280px;
-			padding:0 300px;
+			width:1200px;
+			margin:0 auto
 		}
 		.myNavBox{
 			height:60px;

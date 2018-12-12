@@ -6,7 +6,7 @@
 </template>
 
 <script type="text/javascript">
-import headerNav from '@/components/headerNav'
+import headerNav from '../common/headerNav'
 	export default {
 		data(){
 			return{
@@ -14,9 +14,9 @@ import headerNav from '@/components/headerNav'
 			}
 		},
 		created(){
-			this.$axios.get('/api/page?id=' + this.$route.query.id)
+			this.$api.getData('/api/page?id=' + this.$route.query.id)
 			.then((res)=>{
-				$('.mainBox').append(res.data);
+				$('.mainBox').append(res);
 			})	
 		},
 	 	props:['routerLink'],

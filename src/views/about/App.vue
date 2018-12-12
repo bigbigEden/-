@@ -43,7 +43,7 @@
 </template>
 
 <script type="text/javascript">
-import headerNav from '@/components/headerNav'
+import headerNav from '../common/headerNav'
 	export default{
 		data(){
 			return{
